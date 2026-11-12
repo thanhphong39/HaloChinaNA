@@ -27,9 +27,11 @@
     if(!data||typeof data!=='object'||Array.isArray(data)||data.version!==1)throw Error('Tệp tiến độ không đúng định dạng HaloChina v1.');
     const numbers=a=>Array.isArray(a)?[...new Set(a.filter(x=>Number.isInteger(x)&&x>0&&x<=11000))]:[];
     const strings=a=>Array.isArray(a)?[...new Set(a.filter(x=>typeof x==='string'&&/^hsk[1-6]-\d+$/.test(x)))]:[];
+    const dailyIds=global.HALO_DAILY?new Set(global.HALO_DAILY.flatMap(t=>t.phrases.map(p=>p.id))):null;
+    const dailyStrings=a=>Array.isArray(a)?[...new Set(a.filter(x=>typeof x==='string'&&/^[a-z]+(?:-[a-z]+)*-\d{1,2}$/.test(x)&&(!dailyIds||dailyIds.has(x))))].slice(0,500):[];
     const drafts={};for(const [k,v] of Object.entries(data.drafts||{})){if(/^hsk[1-6]-\d+$/.test(k)&&typeof v==='string')drafts[k]=v.slice(0,20000);}
     const attempts=Array.isArray(data.attempts)?data.attempts.filter(a=>a&&Number.isFinite(a.correct)&&Number.isFinite(a.total)&&a.total>0&&a.total<=200&&a.correct>=0&&a.correct<=a.total&&Number.isInteger(a.level)&&a.level>=1&&a.level<=6&&Number.isFinite(a.at)).slice(-100).map(a=>({level:a.level,correct:a.correct,total:a.total,at:a.at,mode:a.mode==='exam'?'exam':'practice',seconds:Math.max(0,Number(a.seconds)||0)})):[];
-    return {version:1,saved:numbers(data.saved),known:numbers(data.known),completed:strings(data.completed),drafts,attempts,visits:Array.isArray(data.visits)?data.visits.filter(s=>/^\d{4}-\d{2}-\d{2}$/.test(s)).slice(-366):[],game:global.HaloGameCore?global.HaloGameCore.sanitizeProgress(data.game):{cleared:{},days:{},autoAdvance:false}};
+    return {version:1,saved:numbers(data.saved),known:numbers(data.known),completed:strings(data.completed),drafts,attempts,visits:Array.isArray(data.visits)?data.visits.filter(s=>/^\d{4}-\d{2}-\d{2}$/.test(s)).slice(-366):[],game:global.HaloGameCore?global.HaloGameCore.sanitizeProgress(data.game):{cleared:{},days:{},autoAdvance:false},daily:{saved:dailyStrings(data.daily?.saved),practiced:dailyStrings(data.daily?.practiced)}};
   }
   global.HaloCore={normalize,escape,shuffle,gloss,match,csv,questions,score,validProgress};
 })(typeof window==='undefined'?globalThis:window);

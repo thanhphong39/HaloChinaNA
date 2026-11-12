@@ -4,6 +4,14 @@ Website tự học tiếng Trung HSK1–HSK6 với giao diện hồng “Nga Anh
 
 Tiêu đề, menu và chữ nội dung có độ đậm/tương phản rõ trên nền pastel; các nhóm tài liệu dùng màu hồng berry, tím và xanh ngọc. Trò chơi có lời khen đa dạng, chuỗi câu đúng liên tiếp và lời động viên theo kỹ năng khi sai, đi kèm đáp án/giải thích. Thông điệp giữ ổn định khi tải lại lượt chơi; phần luyện nói chỉ ghi nhận tự thực hành, không đưa lời khen giả về độ chuẩn phát âm.
 
+## Giao tiếp hằng ngày
+
+Mục **Giao tiếp hằng ngày** trên sidebar mở `#/communication/1`: 24 chủ đề, 240 câu giao tiếp và 24 hội thoại bốn lượt (96 lượt nói), tự biên soạn bằng tiếng Trung giản thể, pinyin và nghĩa tiếng Việt. Các nhóm gồm cơ bản, cuộc sống, ăn uống, dịch vụ, đi lại, học & làm, sức khỏe & an toàn. Mẫu câu hỗ trợ giao tiếp, không thay thế tư vấn chuyên môn ở tình huống y tế hoặc khẩn cấp.
+
+Có tìm kiếm tiếng Việt không dấu / chữ Hán / pinyin (có thể bỏ khoảng trắng), lọc nhóm chủ đề, lưu câu, đánh dấu tự luyện, ẩn pinyin hoặc nghĩa để ôn, nghe thường/chậm, nghe liên tiếp hội thoại và dừng, sao chép, xuất CSV, in / lưu PDF. Giọng đọc dùng Web Speech API của thiết bị. Phát hội thoại được hủy khi chuyển trang hoặc ẩn tab. Câu đã lưu và đã luyện được giữ trong bản xuất/nhập tiến độ JSON, vẫn đọc được bản sao từ các phiên bản cũ.
+
+Nội dung ở `dist/data/daily-conversation.js`; giao diện ở `dist/daily.js` và `dist/daily.css`. Câu và hội thoại là ví dụ học tập tự biên soạn, không sao chép kho nội dung của website khác.
+
 ## Hành trình Thỏ Mây
 
 Mục **Trò chơi** ở sidebar có 120 cấp, chia 6 thế giới × 20 cấp HSK. Ngân hàng từ vựng được chia thành 120 phần; bài học tương ứng đi qua cả 108 bài đã biên soạn. Mỗi lượt lấy mẫu từ phần của cấp đó, nên chơi lại có thể gặp từ khác. Cứ 5 cấp có mốc ôn tập gồm 16 thử thách; các cấp khác có 12 thử thách. Mỗi lượt có từ vựng/pinyin, ngữ pháp, đọc, nghe, viết/gõ hoặc sắp xếp câu, và đọc to tự đánh giá.
@@ -79,6 +87,8 @@ node scripts/game-browser-check.mjs
 node scripts/music-browser-check.mjs
 node scripts/feedback-browser-check.mjs
 node scripts/autoplay-motion-check.mjs
+node scripts/daily-check.mjs
+node scripts/daily-browser-check.mjs
 ```
 
 Kiểm tra dữ liệu: số lượng theo cấp, đủ trường bài học, nghĩa Việt, đề không trùng ID, đủ bốn phương án, chấm điểm, tìm không dấu, chống chèn HTML, CSV và xác thực bản sao tiến độ. Kiểm tra trình duyệt: tất cả danh mục của sáu cấp, lưu từ, flashcard, bài nháp, bài làm dở, tự nộp khi hết giờ, xuất / nhập và màn hình nhỏ.
