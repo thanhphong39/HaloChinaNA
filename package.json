@@ -1,0 +1,1 @@
+{"name":"halochina","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node scripts/serve.mjs","check":"node scripts/check.mjs","data":"node scripts/prepare-data.mjs"},"devDependencies":{"@playwright/test":"^1.65.0"}}

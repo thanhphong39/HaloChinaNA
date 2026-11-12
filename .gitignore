@@ -1,0 +1,6 @@
+node_modules/
+sources/
+legacy/
+artifacts/
+*.zip
+.env*

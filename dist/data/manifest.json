@@ -1,0 +1,37 @@
+{
+  "edition": "HSK examination syllabus 2025-11",
+  "total": 5400,
+  "levels": [
+    {
+      "level": 1,
+      "count": 300,
+      "vietnamese": 300
+    },
+    {
+      "level": 2,
+      "count": 200,
+      "vietnamese": 200
+    },
+    {
+      "level": 3,
+      "count": 500,
+      "vietnamese": 500
+    },
+    {
+      "level": 4,
+      "count": 1000,
+      "vietnamese": 1000
+    },
+    {
+      "level": 5,
+      "count": 1600,
+      "vietnamese": 1600
+    },
+    {
+      "level": 6,
+      "count": 1800,
+      "vietnamese": 1800
+    }
+  ],
+  "sha256": "0026010578eef45cbfa9b5e7c79927309d0b867ba5e2315f62937460d2459733"
+}

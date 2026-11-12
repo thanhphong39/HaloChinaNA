@@ -1,0 +1,43 @@
+HALOCHINA — CONTENT AND DATA ATTRIBUTION
+
+Vocabulary definitions (Vietnamese): CVDICT, Phong Phan.
+https://github.com/ph0ngp/CVDICT
+Based on CC-CEDICT, originally started by Paul Andrew Denisowski (1997).
+https://www.mdbg.net/chinese/dictionary?page=cedict
+License: Creative Commons Attribution-ShareAlike 4.0 International.
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Dictionary cross-reference: Complete HSK Vocabulary, Yanis Zafirópulos.
+https://github.com/drkameleon/complete-hsk-vocabulary
+Original project code MIT (see DICTIONARY-LICENSE.txt).
+Dictionary definitions retain CC-CEDICT's CC BY-SA 4.0 terms.
+
+Level / pinyin factual cross-reference: HSK examination syllabus, November 2025,
+Center for Language Education and Cooperation / Chinese Testing International.
+Indexed by hsk-tutor.com / uranbekanarbaev:
+https://github.com/uranbekanarbaev/hsk-3.0-vocabulary-dataset
+https://www.chinesetest.cn/HSK
+No examination papers, audio recordings or source syllabus PDFs are bundled.
+Original syllabus rights remain with the respective rightsholders.
+
+Vietnamese character readings: Unicode Unihan kVietnamese, Unicode, Inc.
+https://www.unicode.org/charts/unihan.html
+Unicode License V3; see UNICODE-LICENSE.txt.
+
+Primary Sino-Vietnamese readings by pinyin: Phong Phan,
+https://github.com/ph0ngp/hanviet-pinyin-wordlist
+MIT License; see HANVIET-LICENSE.txt.
+
+HaloChina modifications: selection of HSK 1–6 records, pronunciation-aware
+dictionary matching, conversion of traditional character readings, a small
+editorial reading map and explicit Vietnamese definition overrides.
+The resulting vocabulary.js dictionary dataset is available under CC BY-SA 4.0.
+Reusers must retain attribution, identify changes and share adapted dictionary
+data under CC BY-SA 4.0. The downloadable CSVs carry this attribution too.
+
+Vietnamese lessons, grammar explanations, example sentences, exercise prompts
+and study guides were composed for HaloChina. Their placement by level is an
+independent teaching sequence, not an official HSK grammar syllabus.
+
+The app is independent and not affiliated with 123tiengtrung.com or any HSK
+exam provider. No content from that website's document collection is bundled.
