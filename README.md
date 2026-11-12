@@ -6,11 +6,11 @@ Tiêu đề, menu và chữ nội dung có độ đậm/tương phản rõ trên
 
 ## Giao tiếp hằng ngày
 
-Mục **Giao tiếp hằng ngày** trên sidebar mở `#/communication/1`: 24 chủ đề, 240 câu giao tiếp và 24 hội thoại bốn lượt (96 lượt nói), tự biên soạn bằng tiếng Trung giản thể, pinyin và nghĩa tiếng Việt. Các nhóm gồm cơ bản, cuộc sống, ăn uống, dịch vụ, đi lại, học & làm, sức khỏe & an toàn. Mẫu câu hỗ trợ giao tiếp, không thay thế tư vấn chuyên môn ở tình huống y tế hoặc khẩn cấp.
+Mục **Giao tiếp hằng ngày** trên sidebar mở `#/communication/1`: 124 chủ đề (bổ sung 100 chủ đề mới), 1.240 câu giao tiếp và 124 hội thoại bốn lượt (496 lượt nói), tự biên soạn bằng tiếng Trung giản thể, pinyin và nghĩa tiếng Việt. Các nhóm gồm cơ bản, cuộc sống, ăn uống, dịch vụ, đi lại, học & làm, sức khỏe & an toàn, công nghệ, vui chơi & sở thích, quan hệ & dịp đặc biệt. Mẫu câu hỗ trợ giao tiếp, không thay thế tư vấn chuyên môn ở tình huống y tế hoặc khẩn cấp.
 
 Có tìm kiếm tiếng Việt không dấu / chữ Hán / pinyin (có thể bỏ khoảng trắng), lọc nhóm chủ đề, lưu câu, đánh dấu tự luyện, ẩn pinyin hoặc nghĩa để ôn, nghe thường/chậm, nghe liên tiếp hội thoại và dừng, sao chép, xuất CSV, in / lưu PDF. Giọng đọc dùng Web Speech API của thiết bị. Phát hội thoại được hủy khi chuyển trang hoặc ẩn tab. Câu đã lưu và đã luyện được giữ trong bản xuất/nhập tiến độ JSON, vẫn đọc được bản sao từ các phiên bản cũ.
 
-Nội dung ở `dist/data/daily-conversation.js`; giao diện ở `dist/daily.js` và `dist/daily.css`. Câu và hội thoại là ví dụ học tập tự biên soạn, không sao chép kho nội dung của website khác.
+Nội dung gốc ở `dist/data/daily-conversation.js`; 100 chủ đề bổ sung ở `dist/data/daily-extra.js`; giao diện ở `dist/daily.js` và `dist/daily.css`. Câu và hội thoại là ví dụ học tập tự biên soạn, không sao chép kho nội dung của website khác.
 
 ## Hành trình Thỏ Mây
 

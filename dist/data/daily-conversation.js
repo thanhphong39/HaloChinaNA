@@ -314,7 +314,7 @@ B|您最后在哪里用过手机？|Nín zuìhòu zài nǎlǐ yòng guo shǒujī
 A|在楼下的咖啡店。|Zài lóuxià de kāfēidiàn.|Ở quán cà phê dưới tầng.
 B|我帮您联系一下那边的工作人员。|Wǒ bāng nín liánxì yíxià nàbiān de gōngzuò rényuán.|Tôi sẽ giúp anh/chị liên hệ nhân viên bên đó.`},
 ];
-window.HALO_DAILY = window.HALO_DAILY_RAW.map((topic,index)=>({...topic,number:index+1,
+window.HALO_DAILY = window.HALO_DAILY_RAW.concat(window.HALO_DAILY_EXTRA_RAW||[]).map((topic,index)=>({...topic,number:index+1,
  phrases:topic.phrases.trim().split('\n').map((row,i)=>{const [zh,pinyin,vi]=row.split('|');return {id:`${topic.id}-${i+1}`,topicId:topic.id,number:i+1,zh,pinyin,vi};}),
  dialogue:topic.dialogue.trim().split('\n').map((row,i)=>{const [speaker,zh,pinyin,vi]=row.split('|');return {id:`${topic.id}-dialogue-${i+1}`,speaker,zh,pinyin,vi};})
 }));
