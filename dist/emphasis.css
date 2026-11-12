@@ -1,0 +1,56 @@
+/* Stronger typography and clear berry, lilac and teal accents on pastel surfaces. */
+:root{--ink:#503044;--muted:#785365;--deep:#a22e63;--teal:#9b305f;--orange:#c33b79}
+body{font-weight:500;color:var(--ink)}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.025em}
+.nga-hero h1,.game-hero h1{color:#6e244b;font-weight:800}
+.nga-hero h1 em,.game-hero h1 em{color:#ba326f}
+.page-title h1,.section-heading h2,.level-title h2,.panel h2,.panel h3,.journey-heading h2,.challenge-prompt,.result-skills h2,.game-review h2{color:#842c5b;font-weight:800}
+.resource-card h3,.lesson-card h3,.download-card h3,.game-panel h3,.world-banner h3,.grammar-item summary{color:#92305e;font-weight:750}
+.resource-card:nth-child(3n+2) h3,.lesson-card:nth-child(3n+2) h3,.download-card:nth-child(3n+2) h3{color:#75458e}
+.resource-card:nth-child(3n) h3,.lesson-card:nth-child(3n) h3,.download-card:nth-child(3n) h3{color:#306f70}
+.resource-card p,.lesson-card p,.download-card p,.page-title p,.panel p,.panel li,.guide-body p,.game-panel p,.game-hero p,.nga-hero p{color:#765565;font-weight:500}
+.resource-card{border-color:#e9cbd9;border-top:3px solid #d96d9e}
+.resource-card:nth-child(3n+2){border-top-color:#ac89c1}.resource-card:nth-child(3n){border-top-color:#7eaaa6}
+.resource-icon{background:#f8dce9;color:#a73970}.resource-icon.peach{background:#fff0df;color:#9b6127}.resource-icon.blue{background:#eee2f6;color:#795197}
+.resource-footer,.lesson-meta,.lv-count,.selected .lv-count,.level-card .lv-range,.level-title p{color:#945172;font-weight:600}
+.nav-item{font-weight:650;color:#805468}.nav-item.active{font-weight:800;color:#a52f66;background:#f9dce9;box-shadow:inset 3px 0 #c3427f}
+.sidebar-caption{color:#98647e;font-weight:750}.level-link{font-weight:650;color:#82566c}.level-link.active{color:#9d3264;font-weight:800}
+.level-description{color:#956c80;font-weight:550}.level-card .lv-name{color:#7d365a;font-weight:800}.level-dot{font-weight:750}
+.pink-eyebrow,.eyebrow,.breadcrumb,.back-link,.text-link{color:#99516f;font-weight:700}
+.button{background:#b83c75;color:#fff;font-weight:750;box-shadow:0 3px 0 #8d235d20}.button:hover{background:#9f2e64}
+.button.ghost{background:#fffafb;color:#98335f;border-color:#deacc4;font-weight:700}.button.light{color:#a32960;font-weight:750}
+.button.coral{background:#bf437e}.button.danger{background:#a44959}.text-link{color:#a53267}
+.tab{font-weight:650;color:#88566f}.tab.active{font-weight:800;color:#a32e65;border-color:#be467f}
+.choice{color:#674058;font-weight:600;border-color:#e4c8d7}.choice .letter{color:#9d3d6b;background:#f8dfeb;font-weight:750}
+.choice.chosen{background:#fbe0ee;border-color:#bc5087;color:#822b59}.choice.correct{background:#eaf6f0;border-color:#70ad91;color:#24654d}.choice.incorrect{background:#fff1e6;border-color:#d6a47d;color:#8c512a}
+.formula{color:#8e315f;font-weight:650;border-left-color:#bc4d82;background:#fbe5ef}
+.example .zh,.game-passage,td.hanzi{color:#8d345f;font-weight:650}.example .vi,.hanviet{color:#875c74;font-weight:550}.pinyin{color:#8c5b30;font-weight:600}
+th{font-weight:750;color:#8d4368;background:#fbe4ee}td{font-weight:500;color:#684555}.meaning{font-weight:550}
+.stat-card strong,.result-score,.journey-stats strong,.daily-xp strong,.result-metrics strong{color:#a3326d;font-weight:800}
+.journey-stats p>span,.journey-stats strong small,.stat-card span,.result-metrics span{color:#85566e;font-weight:600}
+.world-banner{background:linear-gradient(115deg,#f8dce9,#f4e6f8)}.world-banner div>span,.world-banner p{color:#8d5774;font-weight:650}.world-banner>strong{color:#9d3a70;font-weight:800}
+.world-tab{color:#87536f;font-weight:750}.world-tab.selected{color:#a02f66;background:#f9deec;border-color:#c7759d}.world-tab small{color:#946980;font-weight:600}
+.stage-caption{font-weight:750;color:#83536f}.stage-ready-label{color:#a23167;font-weight:800}.stage-lock-label{color:#927b89;font-weight:600}.node-level{font-weight:800}
+.status-badge{font-weight:750}.status-badge.ready{background:#f8dce9;color:#972d60}.status-badge.complete{background:#e7f3eb;color:#376a49}.status-badge.reviewing{background:#ffecd9;color:#8b542a}.status-badge.in-progress{background:#eee2f9;color:#73458d}.status-badge.locked{color:#74606d}
+.challenge-meta,.challenge-count,.challenge-footer>span,.game-skill-checks>span{color:#8b5875;font-weight:650}.challenge-meta small{color:#91667f;font-weight:650}.skill-token{color:#a83d74;font-weight:650;background:#f8dfea}
+.play-heading h1,.game-result>h1{color:#842c5b;font-weight:800}.game-result>p,.result-skill-grid strong,.result-skill-grid p{color:#80536d;font-weight:600}.play-companion h3{font-size:16px;color:#993866;font-weight:800}
+.passport-position strong{color:#9d3c6d;font-weight:800}.game-panel .subtle,.checkbox-label,.privacy-note,.subtle{color:#886276;font-weight:550}
+.music-controls strong{font-weight:750;color:#963461}.music-state,.save-status{color:#805b70;font-weight:600}.music-toggle{color:#a52f68;background:#f6d9e8}
+.notice,.tip{color:#885c38;font-weight:550}.callout p{color:#8d6b4c}.callout strong{color:#805631;font-weight:750}
+.coaching-panel{padding:20px;border-radius:16px;border-width:1px;border-left-width:4px;box-shadow:0 5px 18px #426c4d07;overflow:hidden}
+.coaching-panel.is-correct{background:linear-gradient(115deg,#eaf7ef,#f6fcf8);border-color:#86b89c;color:#2f694d}
+.coaching-panel.needs-review{background:linear-gradient(115deg,#fff1e4,#fff9f1);border-color:#dcaf86;color:#86572e}
+.coaching-panel.practice-feedback{background:linear-gradient(115deg,#f1e8fb,#fbf7ff);border-color:#b69bcc;color:#70468b}
+.coaching-head{display:flex;align-items:center;gap:12px}.feedback-emotion{flex-shrink:0;display:grid;place-items:center;width:43px;height:43px;border-radius:14px;font-size:25px;background:#d4eddf;color:#287150;animation:feedback-pop .4s cubic-bezier(.2,.9,.3,1.4) both}
+.needs-review .feedback-emotion{background:#f7dfc7;color:#a26030}.practice-feedback .feedback-emotion{background:#e6d6f3;color:#81559c}
+.coaching-head>div{min-width:0}.feedback-status{display:block;font-size:9px;letter-spacing:.8px;font-weight:800;margin-bottom:5px;color:inherit}
+.game-feedback .coaching-head strong{display:block;color:inherit;font-size:16px;font-weight:800;line-height:1.6}
+.game-feedback .coaching-copy{font-size:12px;font-weight:600;color:inherit;margin:14px 0 0;line-height:1.9}
+.answer-streak{margin-left:auto;flex-shrink:0;align-self:flex-start;background:#fff7dc;color:#8b6526;border:1px solid #e9d496;border-radius:8px;font-size:10px;font-weight:750;padding:5px 8px;white-space:nowrap}
+.answer-explanation{border-top:1px solid #41674e25;margin-top:16px;padding-top:12px}.answer-explanation summary{font-size:11px;font-weight:750;cursor:pointer;color:inherit;line-height:1.8}.game-feedback .answer-explanation p{font-size:12px;font-weight:500;line-height:1.9;color:inherit;margin:10px 0 0}
+.feedback-coach-note{font-size:10px;font-weight:600;line-height:1.8;color:inherit;margin:11px 0 0}
+.coaching-panel:focus{outline:2px solid #92b7a3;outline-offset:3px}.coaching-panel.needs-review:focus{outline-color:#dfb78f}.coaching-panel.practice-feedback:focus{outline-color:#ba9dce}
+.companion-encourage .play-bunny{background:#fff0df}.companion-encourage h3{color:#97602f}.companion-correct .play-bunny{background:#eaf6ed}.companion-correct h3{color:#386f51}.companion-practice h3{color:#795095}
+@keyframes feedback-pop{from{transform:scale(.7) rotate(-10deg);opacity:.4}to{transform:scale(1) rotate(0);opacity:1}}
+@media(max-width:700px){.game-feedback .coaching-head strong{font-size:15px}.coaching-panel{padding:17px}.coaching-head{gap:10px;flex-wrap:wrap}.feedback-emotion{width:37px;height:37px;font-size:23px;border-radius:12px}.coaching-head>div{flex:1;min-width:160px}.answer-streak{margin-left:47px;font-size:9px;padding:4px 7px}.feedback-status{font-size:8px}.game-feedback .coaching-copy,.game-feedback .answer-explanation p{font-size:12px}.play-companion h3{font-size:14px}.resource-card h3{font-weight:800}.resource-card p{font-weight:550}.game-hearts small{color:#8b6178;font-weight:600}}
+@media(prefers-reduced-motion:reduce){.feedback-emotion{animation:none!important}}

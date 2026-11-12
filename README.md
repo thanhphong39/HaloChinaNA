@@ -2,6 +2,8 @@
 
 Website tự học tiếng Trung HSK1–HSK6 với giao diện hồng “Nga Anh học tiếng Trung”, thay thế ứng dụng cũ. Bản gốc được giữ cục bộ tại `legacy/index.html` và không đưa lên website mới.
 
+Tiêu đề, menu và chữ nội dung có độ đậm/tương phản rõ trên nền pastel; các nhóm tài liệu dùng màu hồng berry, tím và xanh ngọc. Trò chơi có lời khen đa dạng, chuỗi câu đúng liên tiếp và lời động viên theo kỹ năng khi sai, đi kèm đáp án/giải thích. Thông điệp giữ ổn định khi tải lại lượt chơi; phần luyện nói chỉ ghi nhận tự thực hành, không đưa lời khen giả về độ chuẩn phát âm.
+
 ## Hành trình Thỏ Mây
 
 Mục **Trò chơi** ở sidebar có 120 cấp, chia 6 thế giới × 20 cấp HSK. Ngân hàng từ vựng được chia thành 120 phần; bài học tương ứng đi qua cả 108 bài đã biên soạn. Mỗi lượt lấy mẫu từ phần của cấp đó, nên chơi lại có thể gặp từ khác. Cứ 5 cấp có mốc ôn tập gồm 16 thử thách; các cấp khác có 12 thử thách. Mỗi lượt có từ vựng/pinyin, ngữ pháp, đọc, nghe, viết/gõ hoặc sắp xếp câu, và đọc to tự đánh giá.
@@ -73,6 +75,7 @@ node scripts/browser-check.mjs
 node scripts/game-check.mjs
 node scripts/game-browser-check.mjs
 node scripts/music-browser-check.mjs
+node scripts/feedback-browser-check.mjs
 ```
 
 Kiểm tra dữ liệu: số lượng theo cấp, đủ trường bài học, nghĩa Việt, đề không trùng ID, đủ bốn phương án, chấm điểm, tìm không dấu, chống chèn HTML, CSV và xác thực bản sao tiến độ. Kiểm tra trình duyệt: tất cả danh mục của sáu cấp, lưu từ, flashcard, bài nháp, bài làm dở, tự nộp khi hết giờ, xuất / nhập và màn hình nhỏ.
