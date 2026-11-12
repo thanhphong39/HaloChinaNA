@@ -2,6 +2,9 @@
 
 Website tự học tiếng Trung HSK1–HSK6 với giao diện hồng “Nga Anh học tiếng Trung”, thay thế ứng dụng cũ. Bản gốc được giữ cục bộ tại `legacy/index.html` và không đưa lên website mới.
 
+Mã nguồn GitHub: https://github.com/thanhphong39/HaloChinaNA. Cấu hình tự deploy
+GitHub Pages nằm ở `.github/workflows/pages.yml`; xem [hướng dẫn triển khai](GITHUB_DEPLOY.md).
+
 Tiêu đề, menu và chữ nội dung có độ đậm/tương phản rõ trên nền pastel; các nhóm tài liệu dùng màu hồng berry, tím và xanh ngọc. Trò chơi có lời khen đa dạng, chuỗi câu đúng liên tiếp và lời động viên theo kỹ năng khi sai, đi kèm đáp án/giải thích. Thông điệp giữ ổn định khi tải lại lượt chơi; phần luyện nói chỉ ghi nhận tự thực hành, không đưa lời khen giả về độ chuẩn phát âm.
 
 ## Giao tiếp hằng ngày
