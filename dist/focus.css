@@ -1,0 +1,9 @@
+.focus-panel{margin:0 0 20px;padding:13px 18px;border:1px solid #eab4cb;border-radius:18px;background:#fff3f8;color:#7d2d55}
+.focus-summary{display:flex;align-items:center;flex-wrap:wrap;gap:9px;font-size:14px}
+.focus-summary strong{font-weight:800}.focus-summary b{display:inline-block;min-width:28px;padding:2px 8px;border-radius:9px;background:#ae386c;color:white;text-align:center;font-size:17px}
+.focus-summary small{color:#805367;margin-left:auto;font-weight:600}
+.focus-panel.has-reminder{border:2px solid #bf4479;background:linear-gradient(110deg,#ffe5f0,#fff9fc);box-shadow:0 5px 20px #a62d6814}
+.focus-reminder{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #eab4cb}
+.focus-reminder strong{font-size:18px;color:#9b2559;font-weight:850}.focus-reminder p{margin:6px 0 0;line-height:1.6;font-weight:600}.focus-reminder button{flex-shrink:0}
+@media(max-width:600px){.focus-panel{padding:12px}.focus-summary small{margin-left:0;width:100%}.focus-reminder{align-items:stretch;flex-direction:column}.focus-reminder button{width:100%}}
+@media print{.focus-panel{display:none}}

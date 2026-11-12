@@ -109,5 +109,5 @@
   document.addEventListener('submit',e=>{if(e.target.id==='game-write-form'){e.preventDefault();if(session?.questions[session.index]?.type==='typing'&&!session.answers[session.questions[session.index].id]){const value=$('#game-typed').value.trim();if(value)accept(value);}}});
   window.addEventListener('pagehide',()=>{if(session)saveSession();cleanup();});
  }
- window.HaloGame={init,renderMap,renderPlay,renderResult,renderGuide,afterRender,bunny};
+ window.HaloGame={init,renderMap,renderPlay,renderResult,renderGuide,afterRender,bunny,getActivity:()=>route.view==='game'&&session&&Number(route.id)===session.stage?{key:`game:${session.startedAt}:${session.stage}`,kind:'game',suppressBlur:recordingBusy&&!recorder}:null};
 })();
