@@ -4,3 +4,4 @@ legacy/
 artifacts/
 *.zip
 .env*
+debug.log

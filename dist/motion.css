@@ -1,0 +1,16 @@
+/* Opacity and transforms keep the transition off the layout path. */
+:root{--motion-ease:cubic-bezier(.22,1,.36,1)}
+.motion-managed>section,.motion-managed>.page-title,.motion-managed>.journey-stats,.motion-managed>.journey-layout{animation:none}
+.button,.nav-item,.level-link,.level-card,.resource-card,.lesson-card,.world-tab,.stage-node,.choice,.icon-button,.word-token{transition:transform .24s var(--motion-ease),box-shadow .24s var(--motion-ease),background-color .22s ease,border-color .22s ease,color .22s ease}
+.choice:hover:not(:disabled){transform:translate3d(3px,0,0)}
+.choice.chosen .letter,.choice.correct .letter{transition:background-color .24s ease,color .24s ease}
+.progress-track i,.mini-bar span{transition:width .65s var(--motion-ease)}
+.coaching-panel{animation:coaching-arrive .34s var(--motion-ease) both}
+.music-controls{transition:border-color .24s ease,background-color .24s ease}
+.sidebar{transition:transform .3s var(--motion-ease)}
+dialog[open]{animation:dialog-arrive .26s var(--motion-ease) both}
+dialog[open]::backdrop{animation:backdrop-arrive .22s ease both}
+@keyframes coaching-arrive{from{opacity:.4;transform:translate3d(0,9px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes dialog-arrive{from{opacity:.4;transform:translate3d(0,12px,0) scale(.98)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes backdrop-arrive{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

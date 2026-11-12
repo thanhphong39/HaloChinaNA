@@ -1,7 +1,7 @@
 /* Original procedural music for Thỏ Mây. No downloads or external recordings. */
 (() => {
  'use strict';
- let prefs={enabled:true,volume:22};try{const p=JSON.parse(localStorage.getItem('halochina-music-v1')||'null');if(p){prefs.enabled=p.enabled!==false;prefs.volume=Number.isFinite(p.volume)?Math.max(0,Math.min(100,p.volume)):22;}}catch{}
+ let prefs={enabled:true,volume:32};try{const p=JSON.parse(localStorage.getItem('halochina-music-v1')||'null');if(p){prefs.enabled=p.enabled!==false;prefs.volume=Number.isFinite(p.volume)?Math.max(0,Math.min(100,p.volume)):32;}}catch{}
  let context=null,master=null,scene=false,timer=null,nextTime=0,step=0,suspendTimer=null,speechToken=0,speechTimer=null;
  const holds=new Set(),nodes=new Set();
  const melody=[72,76,79,81,79,76,74,null,72,74,76,79,76,74,72,null,69,72,76,79,76,72,69,null,71,74,79,81,79,74,71,null,76,79,84,81,79,76,74,null,72,76,79,76,74,72,69,null,69,72,77,79,77,76,72,null,74,79,81,79,76,74,72,null];
@@ -9,7 +9,7 @@
  const frequency=midi=>440*Math.pow(2,(midi-69)/12);
  function save(){try{localStorage.setItem('halochina-music-v1',JSON.stringify(prefs));}catch{}update();}
  function desired(){return prefs.enabled&&scene&&!document.hidden&&!holds.has('recording');}
- function target(){return desired()?(prefs.volume/100)*.32*(holds.has('speech')?.12:1):0;}
+ function target(){return desired()?(prefs.volume/100)*.45*(holds.has('speech')?.12:1):0;}
  function gain(){if(!context||!master)return;master.gain.cancelScheduledValues(context.currentTime);master.gain.setTargetAtTime(target(),context.currentTime,.12);}
  function note(midi,when,duration,volume,type='sine'){
   const oscillator=context.createOscillator(),envelope=context.createGain();oscillator.type=type;oscillator.frequency.setValueAtTime(frequency(midi),when);envelope.gain.setValueAtTime(.0001,when);envelope.gain.exponentialRampToValueAtTime(volume,when+.018);envelope.gain.exponentialRampToValueAtTime(.0001,when+duration);oscillator.connect(envelope);envelope.connect(master);nodes.add(oscillator);oscillator.onended=()=>{nodes.delete(oscillator);oscillator.disconnect();envelope.disconnect();};oscillator.start(when);oscillator.stop(when+duration+.02);
@@ -18,6 +18,7 @@
  function pause(){clearInterval(timer);timer=null;gain();clearTimeout(suspendTimer);if(context?.state==='running')suspendTimer=setTimeout(()=>{if(!desired()){for(const oscillator of nodes){try{oscillator.stop();}catch{}}context.suspend().then(update).catch(()=>{});}},280);update();}
  async function unlock(){if(!prefs.enabled||!scene)return;clearTimeout(suspendTimer);try{if(!context){const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio){update();return;}context=new Audio();master=context.createGain();master.gain.value=0;master.connect(context.destination);context.onstatechange=update;}await context.resume();if(!desired()){pause();return;}gain();if(!timer){nextTime=context.currentTime+.08;schedule();timer=setInterval(schedule,120);}update();}catch{update();}}
  function setScene(value){scene=!!value;if(!desired())pause();else if(context?.state==='running'){gain();if(!timer){nextTime=context.currentTime+.08;schedule();timer=setInterval(schedule,120);}}else update();}
+ function startGame(){scene=true;prefs.enabled=true;if(prefs.volume===0)prefs.volume=32;speechToken++;clearTimeout(speechTimer);holds.clear();save();unlock();}
  function hold(reason){holds.add(reason);if(reason==='recording')pause();else gain();update();}
  function release(reason){holds.delete(reason);if(desired()&&context){unlock();}else gain();update();}
  function beginSpeech(){const token=++speechToken;clearTimeout(speechTimer);hold('speech');const finish=()=>{if(token===speechToken){clearTimeout(speechTimer);release('speech');}};speechTimer=setTimeout(finish,20000);return finish;}
@@ -29,5 +30,5 @@
  document.addEventListener('input',e=>{if(e.target.matches('[data-music="volume"]')){prefs.volume=Number(e.target.value);save();gain();}});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();else if(desired()&&context)unlock();});
  window.addEventListener('pagehide',()=>{scene=false;pause();});
- window.HaloMusic={setScene,mount,unlock,hold,release,beginSpeech,cancelSpeech,state:()=>({enabled:prefs.enabled,volume:prefs.volume,contextState:context?.state||'uninitialized',scene,holds:[...holds],status:status()})};
+ window.HaloMusic={setScene,mount,unlock,startGame,hold,release,beginSpeech,cancelSpeech,state:()=>({enabled:prefs.enabled,volume:prefs.volume,contextState:context?.state||'uninitialized',scene,holds:[...holds],activeNotes:nodes.size,status:status()})};
 })();
