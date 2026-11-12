@@ -29,7 +29,7 @@
     const strings=a=>Array.isArray(a)?[...new Set(a.filter(x=>typeof x==='string'&&/^hsk[1-6]-\d+$/.test(x)))]:[];
     const drafts={};for(const [k,v] of Object.entries(data.drafts||{})){if(/^hsk[1-6]-\d+$/.test(k)&&typeof v==='string')drafts[k]=v.slice(0,20000);}
     const attempts=Array.isArray(data.attempts)?data.attempts.filter(a=>a&&Number.isFinite(a.correct)&&Number.isFinite(a.total)&&a.total>0&&a.total<=200&&a.correct>=0&&a.correct<=a.total&&Number.isInteger(a.level)&&a.level>=1&&a.level<=6&&Number.isFinite(a.at)).slice(-100).map(a=>({level:a.level,correct:a.correct,total:a.total,at:a.at,mode:a.mode==='exam'?'exam':'practice',seconds:Math.max(0,Number(a.seconds)||0)})):[];
-    return {version:1,saved:numbers(data.saved),known:numbers(data.known),completed:strings(data.completed),drafts,attempts,visits:Array.isArray(data.visits)?data.visits.filter(s=>/^\d{4}-\d{2}-\d{2}$/.test(s)).slice(-366):[]};
+    return {version:1,saved:numbers(data.saved),known:numbers(data.known),completed:strings(data.completed),drafts,attempts,visits:Array.isArray(data.visits)?data.visits.filter(s=>/^\d{4}-\d{2}-\d{2}$/.test(s)).slice(-366):[],game:global.HaloGameCore?global.HaloGameCore.sanitizeProgress(data.game):{cleared:{},days:{},autoAdvance:false}};
   }
   global.HaloCore={normalize,escape,shuffle,gloss,match,csv,questions,score,validProgress};
 })(typeof window==='undefined'?globalThis:window);

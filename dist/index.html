@@ -3,30 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#174c46">
+  <meta name="theme-color" content="#c75c89">
   <meta name="description" content="HaloChina: thư viện học tiếng Trung HSK1–HSK6 với từ vựng Trung–Việt, bài học, ngữ pháp, flashcard và bài luyện có giải thích.">
-  <title>HaloChina — Học một chút, tiến xa hơn</title>
+  <title>Nga Anh học tiếng Trung · HaloChina</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pink.css">
   <script defer src="data/vocabulary.js"></script>
   <script defer src="data/curriculum.js"></script>
+  <script defer src="game-core.js"></script>
   <script defer src="core.js"></script>
+  <script defer src="music.js"></script>
+  <script defer src="game.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Đến nội dung chính</a>
   <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#/library/1" aria-label="HaloChina trang chủ"><span class="brand-mark" lang="zh">学</span><span>Halo<span class="brand-accent">China</span><small>TIẾNG TRUNG MỖI NGÀY</small></span></a>
+    <a class="brand brand-with-logo" href="#/library/1" aria-label="Nga Anh học tiếng Trung — Trang chủ"><span class="brand-logo-window"><img src="assets/nga-anh-logo.png" alt="Nga Anh học tiếng Trung — logo nơ hồng" width="2000" height="2000"></span></a>
     <div class="sidebar-caption">KHÔNG GIAN HỌC TẬP</div>
     <nav aria-label="Điều hướng chính" id="main-nav"></nav>
     <div class="sidebar-caption level-caption">CẤP ĐỘ CỦA BẠN</div>
     <nav aria-label="Cấp độ HSK" id="level-nav"></nav>
-    <div class="sidebar-bottom"><span class="tiny-flower">✳</span><strong>Từng bước nhỏ.<br>Một hành trình lớn.</strong><p>Dành 15 phút hôm nay<br>cho một điều mới.</p><a href="#/sources">Về nội dung & nguồn dữ liệu ↗</a></div>
+    <div class="sidebar-bottom"><span class="tiny-flower">✿</span><strong>Nga Anh ơi,<br>hôm nay học gì nhỉ?</strong><p>Một chút chăm chỉ,<br>một ngày thật xinh.</p><a href="#/sources">Về nội dung & nguồn dữ liệu ↗</a></div>
   </aside>
   <div class="site-shell">
-    <header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" id="menu-toggle" aria-label="Mở điều hướng" aria-expanded="false">☰</button><span class="breadcrumb" id="breadcrumb">Thư viện tài liệu</span></div><div class="topbar-right"><span class="daily-dot"></span><span class="daily-label">Học một chút, mỗi ngày</span><a class="avatar" href="#/progress" aria-label="Xem tiến độ học tập">HC</a></div></header>
+    <header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" id="menu-toggle" aria-label="Mở điều hướng" aria-expanded="false">☰</button><span class="breadcrumb" id="breadcrumb">Thư viện tài liệu</span></div><div class="topbar-right"><span id="save-status" class="save-status" role="status"><i></i> Đã lưu trên thiết bị</span><a class="avatar" href="#/progress" aria-label="Xem tiến độ học tập của Nga Anh">NA</a></div></header>
     <main id="main" tabindex="-1"><div class="loading">Đang mở thư viện HaloChina…</div></main>
-    <footer><span>© <span id="year"></span> HaloChina · Học theo nhịp của bạn</span><a href="#/sources">Nguồn tài liệu & giấy phép</a></footer>
+    <footer><span>© <span id="year"></span> HaloChina · Một góc học xinh dành cho Nga Anh ♡</span><a href="#/sources">Nguồn tài liệu & giấy phép</a></footer>
   </div>
   <dialog id="reader-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>

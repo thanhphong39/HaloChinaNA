@@ -1,6 +1,16 @@
 # HaloChina
 
-Website tự học tiếng Trung HSK1–HSK6, thay thế ứng dụng cũ. Bản gốc được giữ cục bộ tại `legacy/index.html` và không đưa lên website mới.
+Website tự học tiếng Trung HSK1–HSK6 với giao diện hồng “Nga Anh học tiếng Trung”, thay thế ứng dụng cũ. Bản gốc được giữ cục bộ tại `legacy/index.html` và không đưa lên website mới.
+
+## Hành trình Thỏ Mây
+
+Mục **Trò chơi** ở sidebar có 120 cấp, chia 6 thế giới × 20 cấp HSK. Ngân hàng từ vựng được chia thành 120 phần; bài học tương ứng đi qua cả 108 bài đã biên soạn. Mỗi lượt lấy mẫu từ phần của cấp đó, nên chơi lại có thể gặp từ khác. Cứ 5 cấp có mốc ôn tập gồm 16 thử thách; các cấp khác có 12 thử thách. Mỗi lượt có từ vựng/pinyin, ngữ pháp, đọc, nghe, viết/gõ hoặc sắp xếp câu, và đọc to tự đánh giá.
+
+Để thắng cần đúng ≥80% câu tính điểm, đạt ≥50% ở từng kỹ năng có chấm điểm và xác nhận đã luyện nói. Thắng mở cấp tiếp theo; thỏ chuyển tới cấp vừa mở. Có 1–3 sao, XP, mục tiêu mỗi ngày, khôi phục lượt dở và tùy chọn tự chuyển câu sau 3 giây. Chơi lại chỉ cộng phần XP cải thiện, không cộng điểm trùng. Tiến độ trò chơi đi kèm bản xuất/nhập JSON, tương thích dữ liệu cũ.
+
+Logo là ảnh Nga Anh do người dùng cung cấp, được sao chép nguyên bản vào `dist/assets/nga-anh-logo.png`; giao diện chỉ căn khung hiển thị. Nhạc nền “Giai điệu Thỏ Mây” được viết bằng Web Audio API với giai điệu nguyên bản, không tải bản ghi âm từ bên ngoài. Nhạc khởi động khi bấm bắt đầu/tiếp tục lượt chơi, có bật/tắt và âm lượng được nhớ trên thiết bị. Nhạc giảm khi nghe câu mẫu, dừng khi thu/nghe lại bản ghi, khi ẩn tab hoặc ra ngoài khu trò chơi. Sau khi tải lại trang có thể cần bấm nút ♫ để trình duyệt cho phép âm thanh.
+
+Thu âm chỉ dùng micro sau thao tác bấm và quyền của trình duyệt; bản ghi không được gửi lên máy chủ. Có phương án đọc to không dùng micro. Phần nói là tự đánh giá, không có điểm phát âm AI. Không cam kết hoàn thành thế giới trò chơi đồng nghĩa đạt chứng chỉ HSK. Phương pháp ôn xen kẽ tham khảo bài viết công khai của Duolingo, có dẫn nguồn ở trang **Cách chơi**. Nhân vật thỏ và bản đồ là SVG/CSS viết riêng; hiệu ứng tôn trọng `prefers-reduced-motion`.
 
 ## Chạy
 
@@ -60,6 +70,9 @@ npx playwright install chromium
 npm run check
 # Chạy npm start trong một terminal khác, sau đó:
 node scripts/browser-check.mjs
+node scripts/game-check.mjs
+node scripts/game-browser-check.mjs
+node scripts/music-browser-check.mjs
 ```
 
 Kiểm tra dữ liệu: số lượng theo cấp, đủ trường bài học, nghĩa Việt, đề không trùng ID, đủ bốn phương án, chấm điểm, tìm không dấu, chống chèn HTML, CSV và xác thực bản sao tiến độ. Kiểm tra trình duyệt: tất cả danh mục của sáu cấp, lưu từ, flashcard, bài nháp, bài làm dở, tự nộp khi hết giờ, xuất / nhập và màn hình nhỏ.
